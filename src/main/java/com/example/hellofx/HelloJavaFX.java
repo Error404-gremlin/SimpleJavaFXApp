@@ -12,21 +12,27 @@ public class HelloJavaFX extends Application {
 
     @Override
     public void start(Stage stage) {
-        Label message = new Label("Welcome to JavaFX!");
+        Label message = new Label("Welcome, Lweeendo!");
 
-        Button button = new Button("Click Me");
+        Button button = new Button("Start");
 
         button.setOnAction(event ->
                 message.setText("Great! You clicked the button.")
         );
+        Button resetButton = new Button("Reset");
+
+        resetButton.setOnAction(event ->
+                        message.setText("Welcome, Lweendo!")
+                );
+
 
         VBox layout = new VBox(20);
         layout.setAlignment(Pos.CENTER);
-        layout.getChildren().addAll(message, button);
+        layout.getChildren().addAll(message, button, resetButton);
 
         Scene scene = new Scene(layout, 500, 300);
 
-        stage.setTitle("My First JavaFX Application");
+        stage.setTitle("My First JavaFX Application - 202513582");
         stage.setScene(scene);
         stage.show();
     }
